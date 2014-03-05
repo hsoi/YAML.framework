@@ -107,7 +107,7 @@ __YAMLSerializationObjectWithYAMLDocument (yaml_document_t *document, YAMLReadOp
     for (node = document->nodes.start, i = 0; node < document->nodes.top; node++, i++) {
         switch (node->type) {
             case YAML_SCALAR_NODE: {
-                id value = [[stringClass alloc] initWithUTF8String: (const char *)node->data.scalar.value];
+                id value = [[[stringClass alloc] initWithUTF8String: (const char *)node->data.scalar.value] autorelease];
                 if (!(opt & kYAMLReadOptionStringScalars)) {
                     value = ParseNull(value) ?: ParseBoolean(value) ?: ParseNumber(value) ?: ParseDate(value) ?: value;
                 }
