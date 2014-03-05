@@ -223,7 +223,7 @@ __YAMLSerializationObjectWithYAMLDocument (yaml_document_t *document, YAMLReadOp
 
 + (NSMutableArray *) objectsWithYAMLData: (NSData *) data
                           options: (YAMLReadOptions) opt
-                            error: (NSError **) error;
+                            error: (NSError **) error
 {
     NSMutableArray *result = nil;
     if (data != nil) {
@@ -240,7 +240,7 @@ __YAMLSerializationObjectWithYAMLDocument (yaml_document_t *document, YAMLReadOp
 
 + (NSMutableArray *) objectsWithYAMLString: (NSString *) string
                                    options: (YAMLReadOptions) opt
-                                     error: (NSError **) error;
+                                     error: (NSError **) error
 {
     return [self objectsWithYAMLData: [string dataUsingEncoding: NSUTF8StringEncoding]
                              options: opt
