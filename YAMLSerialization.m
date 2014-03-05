@@ -53,7 +53,7 @@ static NSDate *ParseDate(NSString *str) {
 }
 
 static NSNull *ParseNull(NSString *str) {
-    if (str.length == 0 || [str isEqualToString:@"~"] || [str.lowercaseString isEqualToString:@"null"])
+    if (!str || [str isEqualToString:@"~"] || [str.lowercaseString isEqualToString:@"null"])
         return [NSNull null];
     return nil;
 }
