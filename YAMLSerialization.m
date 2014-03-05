@@ -135,7 +135,7 @@ __YAMLSerializationObjectWithYAMLDocument (yaml_document_t *document, YAMLReadOp
         switch (node->type) {
             case YAML_SEQUENCE_NODE:
                 for (item = node->data.sequence.items.start; item < node->data.sequence.items.top; item++)
-                    [objects[i] addObject: objects[*item - 1]];
+                    [(NSMutableArray*)objects[i] addObject: objects[*item - 1]];
                 break;
 
             case YAML_MAPPING_NODE:
